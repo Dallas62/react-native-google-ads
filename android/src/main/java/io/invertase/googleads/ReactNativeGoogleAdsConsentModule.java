@@ -38,7 +38,7 @@ import java.net.URL;
 import java.util.List;
 
 public class ReactNativeGoogleAdsConsentModule extends ReactNativeModule {
-  private static final String TAG = "GoogleAdsConsent";
+  private static final String TAG = "RNGoogleAdsConsentModule";
   private ConsentInformation consentInformation;
   private ConsentForm consentForm;
 
@@ -222,5 +222,15 @@ public class ReactNativeGoogleAdsConsentModule extends ReactNativeModule {
       consentInformation.addTestDevice((String) device);
     }
     promise.resolve(null);
+  }
+
+  @ReactMethod
+  public void addListener(String eventName) {
+    // Keep: Required for RN built in Event Emitter Calls.
+  }
+
+  @ReactMethod
+  public void removeListeners(Integer count) {
+    // Keep: Required for RN built in Event Emitter Calls.
   }
 }

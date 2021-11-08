@@ -41,7 +41,7 @@ import io.invertase.googleads.common.ReactNativeModule;
 import javax.annotation.Nullable;
 
 public class ReactNativeGoogleAdsInterstitialModule extends ReactNativeModule {
-  private static final String SERVICE = "GoogleAdsInterstitial";
+  private static final String SERVICE = "RNGoogleAdsInterstitialModule";
   private static SparseArray<InterstitialAd> interstitialAdArray = new SparseArray<>();
 
   public ReactNativeGoogleAdsInterstitialModule(ReactApplicationContext reactContext) {
@@ -148,5 +148,15 @@ public class ReactNativeGoogleAdsInterstitialModule extends ReactNativeModule {
                     promise, "not-ready", "Interstitial ad attempted to show but was not ready.");
               }
             });
+  }
+
+  @ReactMethod
+  public void addListener(String eventName) {
+    // Keep: Required for RN built in Event Emitter Calls.
+  }
+
+  @ReactMethod
+  public void removeListeners(Integer count) {
+    // Keep: Required for RN built in Event Emitter Calls.
   }
 }

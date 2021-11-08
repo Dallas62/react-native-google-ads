@@ -27,7 +27,7 @@ import io.invertase.googleads.common.ReactNativeModule;
 import java.util.Objects;
 
 public class ReactNativeGoogleAdsModule extends ReactNativeModule {
-  private static final String SERVICE = "GoogleAds";
+  private static final String SERVICE = "RNGoogleAdsModule";
 
   ReactNativeGoogleAdsModule(ReactApplicationContext reactContext) {
     super(reactContext, SERVICE);
@@ -89,5 +89,15 @@ public class ReactNativeGoogleAdsModule extends ReactNativeModule {
   public void setRequestConfiguration(ReadableMap requestConfiguration, Promise promise) {
     MobileAds.setRequestConfiguration(buildRequestConfiguration(requestConfiguration));
     promise.resolve(null);
+  }
+
+  @ReactMethod
+  public void addListener(String eventName) {
+    // Keep: Required for RN built in Event Emitter Calls.
+  }
+
+  @ReactMethod
+  public void removeListeners(Integer count) {
+    // Keep: Required for RN built in Event Emitter Calls.
   }
 }

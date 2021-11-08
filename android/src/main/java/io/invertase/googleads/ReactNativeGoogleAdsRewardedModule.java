@@ -27,7 +27,7 @@ import com.google.android.gms.ads.rewarded.ServerSideVerificationOptions;
 import io.invertase.googleads.common.ReactNativeModule;
 
 public class ReactNativeGoogleAdsRewardedModule extends ReactNativeModule {
-  private static final String SERVICE = "GoogleAdsRewarded";
+  private static final String SERVICE = "RNGoogleAdsRewardedModule";
   private static SparseArray<RewardedAd> rewardedAdArray = new SparseArray<>();
 
   public ReactNativeGoogleAdsRewardedModule(ReactApplicationContext reactContext) {
@@ -157,5 +157,15 @@ public class ReactNativeGoogleAdsRewardedModule extends ReactNativeModule {
               rewardedAd.show(getCurrentActivity(), adCallback, immersiveModeEnabled);
               promise.resolve(null);
             });
+  }
+
+  @ReactMethod
+  public void addListener(String eventName) {
+    // Keep: Required for RN built in Event Emitter Calls.
+  }
+
+  @ReactMethod
+  public void removeListeners(Integer count) {
+    // Keep: Required for RN built in Event Emitter Calls.
   }
 }
